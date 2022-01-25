@@ -39,7 +39,8 @@ font-size: 2.5rem;
 font-weight: 800;
 transition: all .5s ease;
 &:hover{
-    transform: scale(1.08);
+    color: ${fleurimondColors.palesasAqua};
+        transform: scale(1.08);
 }
 @media (max-width: 1000px){
     display: none;
@@ -108,12 +109,12 @@ padding: 1rem 2rem;
 height: 100%;
 transition: all .2s ease;
 &:hover {
-    color: ${fleurimondColors.white};
+    color: ${fleurimondColors.palesasAqua};
     transform: traslateY(-3rem);
 }
 &:active {
     transform: traslateY(3rem);
-    color: ${fleurimondColors.white};
+    color:${fleurimondColors.palesasAqua};
 }
 @media only screen and (max-width:1000px){
     display: block;

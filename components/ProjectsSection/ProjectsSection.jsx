@@ -36,12 +36,37 @@ export default function ProjectsSection(props) {
   const [chartData, setChartData] = useState(null);
 
   console.log("730: ", chartData?.filter(x => x.name === 'Taven 730' && x.reportDate !== undefined).map(x => {
-    return x.totalTables / 2 * 10;
-    ;
+    const newDateArray = [x.reportDate]
+    console.log("New array: ", newDateArray);
+    const sortedArray = newDateArray.sort((a, b) => {
+      var date1 = a[1] + '-' + a[0] + '-' + a[2];
+      var date2 = b[1] + '-' + b[0] + '-' + b[2];
+      if (Date.parse(date1) > Date.parse(date2)) {
+        return 1;
+      } else if (Date.parse(date1) < Date.parse(date2)) {
+        return -1;
+      } else {
+        return 0;
+      }
+    }
+    )
+    return sortedArray;
   }))
   const data = {
-    labels: chartData?.filter(x => x.name === 'Taven 730' && x.revenue !== undefined).map(x => {
-      return  moment().format(x.reportDate);
+    labels:  chartData?.filter(x => x.name === 'Taven 730' && x.reportDate !== undefined).map(x => {
+      const newDateArray = [x.reportDate]
+      const sortedArray = newDateArray.sort((a, b) => {
+        var date1 = a[1] + '-' + a[0] + '-' + a[2];
+        var date2 = b[1] + '-' + b[0] + '-' + b[2];
+        if (Date.parse(date1) > Date.parse(date2)) {
+          return 1;
+        } else if (Date.parse(date1) < Date.parse(date2)) {
+          return -1;
+        } else {
+          return 0;
+        }
+      })
+      return sortedArray;
     }),
     datasets: [
       {

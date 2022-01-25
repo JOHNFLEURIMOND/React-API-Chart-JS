@@ -36,7 +36,7 @@ font-weight: 800;
 transition: all .5s ease;
 &:hover,&:active,&:focus{
     border-color: ${fleurimondColors.white};
-    color: ${fleurimondColors.white};
+    color: ${fleurimondColors.palesasAqua};
     transform: scale(1.08);
 }
 `;
