@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import moment from 'moment';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -32,31 +33,98 @@ ChartJS.register(
 export default function ProjectsSection(props) {
   const baseUrl = "https://setfive-public.s3.amazonaws.com/api.json";
   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  const [chartData, setChartData] = useState([]);
+  const [chartData, setChartData] = useState(null);
 
+  console.log("730: ", chartData?.filter(x => x.name === 'Taven 730' && x.reportDate !== undefined).map(x => {
+    return x.totalTables / 2 * 10;
+    ;
+  }))
   const data = {
-    labels: chartData?.data?.map(x => x.name),
-    datasets: [{
-      label: `Restaurant Data`,
-      data: chartData?.data?.map(x => x.revenue),
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-      ],
-      borderWidth: 1
-    }]
+    labels: chartData?.filter(x => x.name === 'Taven 730' && x.revenue !== undefined).map(x => {
+      return  moment().format(x.reportDate);
+    }),
+    datasets: [
+      {
+        label: 'Taven 730 Revenue',
+        data: chartData?.filter(x => x.name === 'Taven 730' && x.reportDate !== undefined).map(x => {
+          return x.revenue;
+        }),
+        backgroundColor: [
+          'rgba(75, 192, 192, 0.2)',
+        ],
+        borderColor: [
+          'rgba(75, 192, 192, 1)',
+        ],
+        borderWidth: 1
+      },
+      {
+        label: 'ABC Pizza Revenue',
+        data: chartData?.filter(x => x.name === 'ABC Pizza' && x.reportDate !== undefined).map(x => {
+          return x.revenue;
+        }),
+        backgroundColor: [
+          'rgba(153, 102, 255, 0.2)',
+        ],
+        borderColor: [
+          'rgba(153, 102, 255, 1)',
+        ],
+        borderWidth: 1
+      },
+      {
+        label: 'Taven 730 Average Tables Served',
+        data: chartData?.filter(x => x.name === 'Taven 730' && x.reportDate !== undefined).map(x => {
+          return x.totalTables / 2 * 10;
+        }),
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+        ],
+        borderWidth: 1
+      },
+      {
+        label: 'ABC Pizza Average Tables Served',
+        data: chartData?.filter(x => x.name === 'ABC Pizza' && x.reportDate !== undefined).map(x => {
+          return x.totalTables / 2 * 10;
+        }),
+        backgroundColor: [
+          'rgba(255, 206, 86, 0.2)',
+
+        ],
+        borderColor: [
+          'rgba(255, 206, 86, 1)',
+
+        ],
+        borderWidth: 1
+      },
+      {
+        label: 'Taven 730 Revenue',
+        data: chartData?.filter(x => x.name === 'Taven 730' && x.reportDate !== undefined).map(x => {
+          return x.revenue;
+        }),
+        backgroundColor: [
+          'rgba(54, 162, 235, 0.2)',
+        ],
+        borderColor: [
+          'rgba(54, 162, 235, 1)',
+        ],
+        borderWidth: 1
+      },
+      {
+        label: 'ABC Pizza Revenue',
+        data: chartData?.filter(x => x.name === 'ABC Pizza' && x.reportDate !== undefined).map(x => {
+          return x.revenue;
+        }),
+        backgroundColor: [
+          'rgba(255, 159, 64, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 159, 64, 1)',
+        ],
+        borderWidth: 1
+      },
+    ]
   };
 
   const options = {
@@ -64,7 +132,7 @@ export default function ProjectsSection(props) {
     showScale: true,
     // Boolean - Whether to show a dot for each point
     pointDot: true,
-    showLines: false,
+    showLines: true,
     title: {
       display: true,
       text: 'Chart.js Bar Chart'
@@ -93,11 +161,11 @@ export default function ProjectsSection(props) {
       }).then((response) => {
         if (response.ok) {
           response.json().then((json) => {
-            console.log("API data: ", json);
             for (const dataObj of json) {
-              if (dataObj['name'] === 'Taven 730' || dataObj['name'] === 'ABC Pizza' ) {
+              if (dataObj['name'] === 'Taven 730' || dataObj['name'] === 'ABC Pizza') {
                 data.push(dataObj)
-                console.log("Name Data: ", data);
+                console.log("data: ", data);
+
               };
             }
             setChartData(data)
@@ -110,8 +178,10 @@ export default function ProjectsSection(props) {
 
     chart();
   }, [baseUrl, proxyUrl]);
-  console.log("Chart Data: ", chartData);
 
+  if (!chartData) {
+    return "waiting for data"
+  }
   return (
     <>
       <ProjectsSectionContainer>
@@ -119,7 +189,7 @@ export default function ProjectsSection(props) {
 
         <Header>Chart Info</Header>
 
-        <Line height={900} options={options} data={data} />;
+        <Line height={200} options={options} data={data} />;
       </ProjectsSectionContainer>
     </>
   );
