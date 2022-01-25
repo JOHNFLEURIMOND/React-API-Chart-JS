@@ -3,7 +3,7 @@ import { fleurimondColors } from '../../utils/theme.js';
 
 export const MainHero = styled.div`
 width: 100%;
-height: 60vw;
+height: 30vw;
 box-sizing: border-box;
 display: grid;
 grid-template-columns:  1fr 1fr 1fr;
