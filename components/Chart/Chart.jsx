@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
+const styleLink = document.createElement("link");
+styleLink.rel = "stylesheet";
+styleLink.href = 
+"https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+document.head.appendChild(styleLink);
+
 import moment from 'moment';
 import {
   Chart as ChartJS,
@@ -156,10 +162,17 @@ export default function ProjectsSection(props) {
     chart();
   }, [baseUrl, proxyUrl]);
 
-  if (!chartData) {
-    return <Dimmer active>
-      <Loader />
+  if (chartData) {
+    return <div><Segment>
+    <Dimmer active>
+      <Loader size='massive'>....API Data Is Loading....</Loader>
     </Dimmer>
+          <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+          <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+          <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+          <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png' />
+  </Segment></div>
+
   }
 
   return (
