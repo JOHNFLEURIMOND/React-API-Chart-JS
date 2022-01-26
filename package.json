@@ -8,7 +8,6 @@
     "babel-node": "babel-node --presets='@babel/preset-env' --ignore='foo|bar|baz'",
     "build": "webpack",
     "dev": "webpack-dev-server --open",
-    "serve": "concurrently \"npm run start\" \"npm run dev\"",
     "start": "nodemon Server.js",
     "prettier": "prettier assets/**/*.{jsx,js} --write"
   },
