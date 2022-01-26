@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import { fleurimondColors } from "../../utils/theme.js";
+import styled, { css } from 'styled-components';
+import { fleurimondColors } from '../../utils/theme.js';
 
 export const ProjectsSectionContainer = styled.div`
   display: grid;
@@ -17,20 +17,20 @@ export const ProjectsSectionContainer = styled.div`
   line-height: normal;
   background-color: ${fleurimondColors.white};
 
-  @media (max-width: 800px){
+  @media (max-width: 800px) {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     margin: 0;
     padding: 2em;
     display: grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
     justify-items: center;
     align-items: center;
   }
-  `;
+`;
 
 export const Header = styled.h1`
   font-size: 3rem;
@@ -41,12 +41,11 @@ export const Header = styled.h1`
     font-size: 2rem;
     text-align: center;
     grid-column: span 2;
-    
   }
 `;
 
 export const CardDiv = styled.div`
-grid-column: span 3;
+  grid-column: span 3;
 `;
 export const CineDiv = styled.div`
   display: block;
@@ -105,13 +104,12 @@ export const Bolt = styled.span`
     position: absolute;
     border-style: solid;
     border-width: 0 0 10px 5px;
-    border-color: transparent transparent ${fleurimondColors.graySmoke}
-      transparent;
+    border-color: transparent transparent ${fleurimondColors.graySmoke} transparent;
     top: 0px;
     left: -11px;
     padding: 0;
     margin: 0;
-    content: "";
+    content: '';
   }
 
   &:after {
@@ -119,11 +117,10 @@ export const Bolt = styled.span`
     position: absolute;
     border-style: solid;
     border-width: 0 0 10px 5px;
-    border-color: transparent transparent transparent
-      ${fleurimondColors.graySmoke};
+    border-color: transparent transparent transparent ${fleurimondColors.graySmoke};
     bottom: 0px;
     right: 3px;
-    content: "";
+    content: '';
   }
 `;
 export const FlippedCardInfoFieldset = styled.span`
@@ -131,7 +128,7 @@ export const FlippedCardInfoFieldset = styled.span`
   display: block;
   font-size: 15px;
   width: 100%;
-  font-family: "proxima-nova", "sans-serif";
+  font-family: 'proxima-nova', 'sans-serif';
   font-weight: 500;
   position: relative;
   padding: 0 10px;

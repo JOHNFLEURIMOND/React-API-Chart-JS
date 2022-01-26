@@ -1,5 +1,5 @@
 import { fleurimondColors } from '../../utils/theme.js';
-import styled, {createGlobalStyle} from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const Button = styled.button`
     font-size: 13px;
