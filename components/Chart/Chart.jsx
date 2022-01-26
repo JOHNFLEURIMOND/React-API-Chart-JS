@@ -157,7 +157,7 @@ export default function ProjectsSection(props) {
         });
     };
     chart();
-  }, [baseUrl, proxyUrl]);
+  }, []);
 
   if (!chartData) {
     return (
