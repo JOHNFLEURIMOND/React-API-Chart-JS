@@ -49,6 +49,34 @@ export default function ProjectsSection(props) {
         return newDateArray.sort((a, b) => a - b);
       })
   );
+  const data = [];
+  const chart = async () => {
+    await fetch(`${proxyUrl}${baseUrl}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      }
+    })
+      .then(response => {
+        if (response.ok) {
+          response.json().then(json => {
+            for (const dataObj of json) {
+              if (
+                dataObj["name"] === "Taven 730" ||
+                dataObj["name"] === "ABC Pizza"
+              ) {
+                data.push(dataObj);
+              }
+            }
+            setChartData(data);
+          });
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
 
   const data = {
     labels: chartData
@@ -128,34 +156,6 @@ export default function ProjectsSection(props) {
   };
 
   useEffect(() => {
-    const data = [];
-    const chart = async () => {
-      await fetch(`${proxyUrl}${baseUrl}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*"
-        }
-      })
-        .then(response => {
-          if (response.ok) {
-            response.json().then(json => {
-              for (const dataObj of json) {
-                if (
-                  dataObj["name"] === "Taven 730" ||
-                  dataObj["name"] === "ABC Pizza"
-                ) {
-                  data.push(dataObj);
-                }
-              }
-              setChartData(data);
-            });
-          }
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    };
     chart();
   }, []);
 
