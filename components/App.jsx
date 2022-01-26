@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from '../components/Navbar/Nav.jsx';
 import Footer from '../components/Footer/Footer';
 import MainHero from '../components/MainHero/MainHero';
-import Chart from '../components/ProjectsSection/Chart';
+import Chart from '../components/Chart/Chart';
 import {
   Link, Route, BrowserRouter as Router, Switch
 } from 'react-router-dom';
