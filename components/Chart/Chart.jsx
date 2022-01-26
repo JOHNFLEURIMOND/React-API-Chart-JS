@@ -49,7 +49,7 @@ export default function ProjectsSection(props) {
         return newDateArray.sort((a, b) => a - b);
       })
   );
-  const data = [];
+  const Data = [];
   const chart = async () => {
     await fetch(`${proxyUrl}${baseUrl}`, {
       method: "GET",
@@ -66,10 +66,10 @@ export default function ProjectsSection(props) {
                 dataObj["name"] === "Taven 730" ||
                 dataObj["name"] === "ABC Pizza"
               ) {
-                data.push(dataObj);
+                Data.push(dataObj);
               }
             }
-            setChartData(data);
+            setChartData(Data);
           });
         }
       })
