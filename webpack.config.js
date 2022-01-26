@@ -88,6 +88,6 @@ module.exports = {
     }
   },
   resolve: {
-    extensions: [".jsx", ".js"],
+    extensions: ['*', '.js', '.jsx'],
   },
 };

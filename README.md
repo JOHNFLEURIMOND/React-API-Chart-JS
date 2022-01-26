@@ -1,4 +1,5 @@
 # :checkered_flag:What It Looks Like :checkered_flag:: 
+![ReactEmail](public/chart2.png)
 
 # How It's Made :nut_and_bolt:🔨 :hammer::wrench::
  This application built with React.js, Chart.js, Webpack, Styled-Components.
