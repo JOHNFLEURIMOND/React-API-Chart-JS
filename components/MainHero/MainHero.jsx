@@ -6,7 +6,7 @@ const JFMainHero = (props) => {
     return (
         <MainHero>
                 <Title>
-                ........hire me
+                Taven V.S. ABC Pizza
                 </Title>
         </MainHero>
 

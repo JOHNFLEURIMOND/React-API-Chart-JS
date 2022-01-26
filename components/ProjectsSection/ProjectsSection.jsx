@@ -104,32 +104,6 @@ export default function ProjectsSection(props) {
         ],
         borderWidth: 1
       },
-      {
-        label: 'Taven 730 Revenue',
-        data: chartData?.filter(x => x.name === 'Taven 730' && x.reportDate !== undefined).map(x => {
-          return x.revenue;
-        }),
-        backgroundColor: [
-          'rgba(54, 162, 235, 0.2)',
-        ],
-        borderColor: [
-          'rgba(54, 162, 235, 1)',
-        ],
-        borderWidth: 1
-      },
-      {
-        label: 'ABC Pizza Revenue',
-        data: chartData?.filter(x => x.name === 'ABC Pizza' && x.reportDate !== undefined).map(x => {
-          return x.revenue;
-        }),
-        backgroundColor: [
-          'rgba(255, 159, 64, 0.2)',
-        ],
-        borderColor: [
-          'rgba(255, 159, 64, 1)',
-        ],
-        borderWidth: 1
-      },
     ]
   };
 
