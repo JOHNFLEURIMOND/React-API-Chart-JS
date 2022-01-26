@@ -29,13 +29,6 @@ export default function ProjectsSection(props) {
   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   const [chartData, setChartData] = useState([]);
 
-  console.log(
-    '730: ',
-    chartData
-      ?.filter((x) => x.name === 'Taven 730' && x.reportDate !== undefined)
-      .map((x) => new Date(x.reportDate))
-      .sort((a, b) => a - b)
-  );
   const Data = [];
   const chart = async () => {
     await fetch(`${proxyUrl}${baseUrl}`, {
