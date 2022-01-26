@@ -42,12 +42,7 @@ export default function ProjectsSection(props) {
     "730: ",
     chartData
       ?.filter(x => x.name === "Taven 730" && x.reportDate !== undefined)
-      .map(x => {
-        console.log("report date:", x.reportDate);
-        const newDateArray = [x.reportDate];
-        const array = newDateArray.map(element => new Date(element));
-        return newDateArray.sort((a, b) => a - b);
-      })
+      .map(x => new Date(x.reportDate)).sort((a, b) => a - b)
   );
   const Data = [];
   const chart = async () => {
@@ -81,11 +76,7 @@ export default function ProjectsSection(props) {
   const data = {
     labels: chartData
       ?.filter(x => x.name === "Taven 730" && x.reportDate !== undefined)
-      .map(x => {
-        console.log("report date:", x.reportDate);
-        const newDateArray = [x.reportDate];
-        return newDateArray.sort((a, b) => a - b);
-      }),
+      .map(x => new moment(x.reportDate)).sort((a, b) => a - b),
     datasets: [
       {
         label: "Taven 730 Revenue",
