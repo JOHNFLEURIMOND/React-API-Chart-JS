@@ -38,7 +38,6 @@ export default function ProjectsSection(props) {
   console.log("730: ", chartData?.filter(x => x.name === 'Taven 730' && x.reportDate !== undefined).map(x => {
     console.log("report date:", x.reportDate);
     const newDateArray = [x.reportDate]
-
     const array = newDateArray.map(element => new Date(element));
     return newDateArray.sort((a, b) => a - b);
   }))
