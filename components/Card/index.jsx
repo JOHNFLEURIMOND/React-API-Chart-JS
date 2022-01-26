@@ -14,16 +14,15 @@ width: 300px;
 }
 `;
 
-
 export const CardImage = styled.img`
-object-fit: cover;
-width: 100%;
-`
+  object-fit: cover;
+  width: 100%;
+`;
 
 export const Caption = styled.figcaption`
-background-color: rgba(0,0,0,.7);
-width: 100%;
-`
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+`;
 
 export const CardHeader = styled.header`
   cursor: context-menu;
@@ -38,7 +37,7 @@ export const CardHeading = styled.h1`
 `;
 
 export const CardBody = styled.figure`
-  display: grid; 
+  display: grid;
   grid-template-areas: 200px 50px;
 `;
 
@@ -51,7 +50,7 @@ export const PriceFieldset = styled.h3`
 
 export const NameFieldset = styled.h3`
   color: ${fleurimondColors.black};
-  padding: .75rem;
+  padding: 0.75rem;
   font-size: 1rem;
   border: 0;
 `;
@@ -84,8 +83,8 @@ export const AVideo = styled.a`
   margin-top: 20px;
   border: 0;
 
-  :hover{
-    color: ${fleurimondColors.bebeBlue}
+  :hover {
+    color: ${fleurimondColors.bebeBlue};
   }
 `;
 
@@ -97,4 +96,3 @@ export const FlippedCardInfoFieldset = styled.span`
   padding: 0 10px;
   margin: 5px;
 `;
-

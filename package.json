@@ -9,7 +9,7 @@
     "build": "webpack",
     "dev": "webpack-dev-server --open",
     "start-api": "netlify-lambda serve functions",
-    "prettier": "prettier assets/**/*.{jsx,js} --write"
+    "prettier": "prettier components/**/*.{jsx,js} --write"
   },
   "keywords": [
     "John",
