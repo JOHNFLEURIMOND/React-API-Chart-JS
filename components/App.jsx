@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from '../components/Navbar/Nav.jsx';
 import Footer from '../components/Footer/Footer';
 import MainHero from '../components/MainHero/MainHero';
-import ProjectsSection from '../components/ProjectsSection/ProjectsSection';
+import Chart from '../components/ProjectsSection/Chart';
 import {
   Link, Route, BrowserRouter as Router, Switch
 } from 'react-router-dom';
@@ -16,7 +16,7 @@ const Homepage = (props) => {
       <GlobalStyle />
       <Nav />
       <MainHero />
-      <ProjectsSection />
+      <Chart />
       <Footer />
     </Container>
   );
