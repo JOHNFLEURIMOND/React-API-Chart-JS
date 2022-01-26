@@ -19,7 +19,6 @@
   "author": "John Fleurimond",
   "license": "ISC",
   "dependencies": {
-    "@apollo/client": "^3.4.13",
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/polyfill": "^7.8.7",
