@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Dimmer, Loader, Image, Segment } from 'semantic-ui-react'
 import moment from 'moment';
 import {
   Chart as ChartJS,
@@ -33,7 +34,7 @@ ChartJS.register(
 export default function ProjectsSection(props) {
   const baseUrl = "https://setfive-public.s3.amazonaws.com/api.json";
   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  const [chartData, setChartData] = useState(null);
+  const [chartData, setChartData] = useState([]);
 
   console.log("730: ", chartData?.filter(x => x.name === 'Taven 730' && x.reportDate !== undefined).map(x => {
     console.log("report date:", x.reportDate);
@@ -152,13 +153,15 @@ export default function ProjectsSection(props) {
         console.log(error);
       });
     }
-
     chart();
   }, [baseUrl, proxyUrl]);
 
   if (!chartData) {
-    return "waiting for data"
+    return <Dimmer active>
+      <Loader />
+    </Dimmer>
   }
+
   return (
     <>
       <ProjectsSectionContainer>
