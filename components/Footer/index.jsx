@@ -16,9 +16,9 @@ export const Footer = styled.footer`
   font-size: 20px;
   background: linear-gradient(
     90deg,
-    ${fleurimondColors.woooRed} 0%,
-    ${fleurimondColors.orneryOrange} 27%,
-    ${fleurimondColors.leapingLemon} 85%
+    ${fleurimondColors.black} 0%,
+    ${fleurimondColors.smoke} 27%,
+    ${fleurimondColors.graySmoke} 85%
   );
   padding: 20px;
 `;
@@ -43,7 +43,7 @@ export const FooterLogo = styled(Link)`
   &:active,
   &:focus {
     border-color: ${fleurimondColors.white};
-    color: ${fleurimondColors.palesasAqua};
+    color: ${fleurimondColors.woooRed};
     transform: scale(1.08);
   }
 `;
@@ -106,12 +106,12 @@ export const MenuLink = styled(Link)`
   height: 100%;
   transition: all 0.2s ease;
   &:hover {
-    color: ${fleurimondColors.palesasAqua};
+    color: ${fleurimondColors.woooRed};
     transform: traslateY(-3rem);
   }
   &:active {
     transform: traslateY(3rem);
-    color: ${fleurimondColors.palesasAqua};
+    color: ${fleurimondColors.woooRed};
   }
   @media only screen and (max-width: 1000px) {
     display: block;
