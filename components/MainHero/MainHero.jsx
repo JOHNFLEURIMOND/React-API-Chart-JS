@@ -4,7 +4,7 @@ import { MainHero, Title } from './index';
 const JFMainHero = (props) => {
   return (
     <MainHero>
-      <Title>Taven V.S. ABC Pizza</Title>
+      <Title>Taven 730 V.S. ABC Pizza</Title>
     </MainHero>
   );
 };
