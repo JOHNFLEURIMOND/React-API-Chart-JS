@@ -14,9 +14,9 @@ export const Nav = styled.nav`
   height: 80px;
   background: linear-gradient(
     90deg,
-    ${fleurimondColors.woooRed} 0%,
-    ${fleurimondColors.orneryOrange} 27%,
-    ${fleurimondColors.leapingLemon} 85%
+    ${fleurimondColors.black} 0%,
+    ${fleurimondColors.smoke} 27%,
+    ${fleurimondColors.graySmoke} 85%
   );
   /* box-shadow: ${fleurimondColors.graySmoke} ; */
   box-shadow: 0px 2px 10px ${fleurimondColors.graySmoke};
@@ -44,7 +44,7 @@ export const NavLogo = styled(Link)`
   font-weight: 800;
   transition: all 0.5s ease;
   &:hover {
-    color: ${fleurimondColors.palesasAqua};
+    color: ${fleurimondColors.woooRed};
     transform: scale(1.08);
   }
   @media (max-width: 1000px) {
@@ -65,7 +65,7 @@ export const MenuIcon = styled.div`
   @media (max-width: 1000px) {
     display: block;
     position: absolute;
-    color: ${fleurimondColors.white};
+    color: ${fleurimondColors.woooRed};
     top: 0;
     right: 0;
     transform: translate(-50%, 20%);
@@ -88,9 +88,9 @@ export const Menu = styled.ul`
     left: ${({ click }) => (click ? '0' : '-100%')};
     background: linear-gradient(
       90deg,
-      rgba(69, 101, 238, 0.95) 0%,
-      rgba(116, 59, 239, 0.85) 27%,
-      rgba(91, 220, 148, 0.55) 85%
+      ${fleurimondColors.black} 0%,
+      ${fleurimondColors.smoke} 27%,
+      ${fleurimondColors.white} 85%
     );
     transition: all 0.5s ease;
   }
@@ -119,12 +119,12 @@ export const MenuLink = styled(Link)`
   height: 100%;
   transition: all 0.2s ease;
   &:hover {
-    color: ${fleurimondColors.palesasAqua};
+    color: ${fleurimondColors.woooRed};
     transform: traslateY(-3rem);
   }
   &:active {
     transform: traslateY(3rem);
-    color: ${fleurimondColors.palesasAqua};
+    color: ${fleurimondColors.woooRed};
   }
   @media only screen and (max-width: 1000px) {
     display: block;
