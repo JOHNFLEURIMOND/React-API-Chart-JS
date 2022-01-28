@@ -6,7 +6,9 @@
 
 ## Optimizations.
 
- # How It's Works:white_check_mark::
+# How It's Works:white_check_mark::
+
+  https://react-api-chart-js.netlify.app/
 
 ## My Awesome Project && Lessons Learned :mortar_board::
 
