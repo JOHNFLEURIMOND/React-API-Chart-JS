@@ -88,7 +88,7 @@ export default function ProjectsSection(props) {
         data: chartData
           ?.filter((x) => x.name === 'Taven 730' && x.reportDate !== undefined)
           .map((x) => {
-            return (x.totalTables / 2) * 30;
+            return x.totalTables / 2 * 30;
           }),
         backgroundColor: ['rgba(255, 99, 132, 0.2)'],
         borderColor: ['rgba(255, 99, 132, 1)'],
@@ -99,7 +99,7 @@ export default function ProjectsSection(props) {
         data: chartData
           ?.filter((x) => x.name === 'ABC Pizza' && x.reportDate !== undefined)
           .map((x) => {
-            return (x.totalTables / 2) * 30;
+            return x.totalTables / 2 * 30;
           }),
         backgroundColor: ['rgba(255, 206, 86, 0.2)'],
         borderColor: ['rgba(255, 206, 86, 1)'],
