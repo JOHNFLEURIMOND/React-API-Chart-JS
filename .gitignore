@@ -25,3 +25,11 @@ node_modules/
 
 # Local Netlify folder
 .netlify
+
+# Added by ggshield
+.cache_ggshield
+
+# local environment configuration
+.env
+.env.*
+!.env.example
